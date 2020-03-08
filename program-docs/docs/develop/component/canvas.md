@@ -6,22 +6,22 @@ sidebar: canvas
 webUrl: https://qft12m.smartapps.cn/component/canvas/canvas
 ---
 
- 
+
 
 **解释**：画布。画布是一个矩形区域，开发者可以在页面上绘制图形。canvas 拥有多种绘制路径、矩形、图形、字符以及添加图像的方法。相关api：[swan.createCanvasContext](https://smartprogram.baidu.com/docs/develop/api/show/canvas/)该组件是客户端创建的[原生组件](https://smartprogram.baidu.com/docs/develop/component/native/)，使用时请注意相关限制。
 
-##  属性说明 
+##  属性说明
 
-|属性名 |类型  |默认值  | 必填 |说明|
-|:---- |:---- |:---- |:---- |:---- |
-| canvas-id | String |  | 是 |canvas 组件的唯一标识符 |
-| disable-scroll | Boolean  | false | 否 | 当在 canvas 中移动且有绑定手势事件时，禁止屏幕滚动以及下拉刷新 |
-| bindtouchstart | EventHandle |  | 否 | 手指触摸动作开始 |
-| bindtouchmove | EventHandle |  | 否 |手指触摸后移动 |
-| bindtouchend | EventHandle |  | 否 |手指触摸动作结束 |
-| bindtouchcancel | EventHandle |  | 否 |手指触摸动作被打断，如来电提醒，弹窗 |
-| bindlongtap | EventHandle |  | 否 |手指长按 350ms 之后触发，触发了长按事件后进行移动不会触发屏幕的滚动 |
-| binderror | EventHandle |  | 否 |当发生错误时触发 error 事件，detail = {errMsg: 'something wrong'} |
+|属性名 |类型  |默认值  | 必填 |说明|Web 态说明|
+|:---- |:---- |:---- |:---- |:---- |:---- |
+| canvas-id | String |  | 是 |canvas 组件的唯一标识符 |-|
+| disable-scroll | Boolean  | false | 否 | 当在 canvas 中移动且有绑定手势事件时，禁止屏幕滚动以及下拉刷新 |-|
+| bindtouchstart | EventHandle |  | 否 | 手指触摸动作开始 |-|
+| bindtouchmove | EventHandle |  | 否 |手指触摸后移动 |-|
+| bindtouchend | EventHandle |  | 否 |手指触摸动作结束 |-|
+| bindtouchcancel | EventHandle |  | 否 |手指触摸动作被打断，如来电提醒，弹窗 |-|
+| bindlongtap | EventHandle |  | 否 |手指长按 350ms 之后触发，触发了长按事件后进行移动不会触发屏幕的滚动 |-|
+| binderror | EventHandle |  | 否 |当发生错误时触发 error 事件，detail = {errMsg: 'something wrong'} |触发时机来源于 canvas 标签上的 onerror |
 
 
 
@@ -37,19 +37,19 @@ webUrl: https://qft12m.smartapps.cn/component/canvas/canvas
 </div>
 
 
- 
 
-###  代码示例1 
 
- 
+###  代码示例1
+
+
 
 :::codeTab
 ```swan
 <view class="canvas-view">
-    <canvas 
-        canvas-id="myCanvas" 
-        disable-scroll="false" 
-        class="canvas" 
+    <canvas
+        canvas-id="myCanvas"
+        disable-scroll="false"
+        class="canvas"
         width="610"
         height="610">
     </canvas>
@@ -57,7 +57,7 @@ webUrl: https://qft12m.smartapps.cn/component/canvas/canvas
 
 ```
 
- 
+
 
 ```js
 Page({
@@ -108,7 +108,7 @@ Page({
 });
 ```
 
- 
+
 
 ```css
 .canvas-view {
@@ -124,11 +124,11 @@ Page({
 }
 ```
 :::
-###  代码示例2 
+###  代码示例2
 
 <a href="swanide://fragment/7f8700d9c2619093aac34548612fa3f91575828644802" title="在开发者工具中预览效果" target="_self">在开发者工具中预览效果</a>
 
- 
+
 
 :::codeTab
 ```swan
@@ -140,7 +140,7 @@ Page({
 </view>
 ```
 
- 
+
 
 ```js
 Page({
@@ -154,7 +154,7 @@ Page({
         this.getResultComment(completePercent);
         this.showScoreAnimation(rightItems, totalItems);
     },
- 
+
     showScoreAnimation(rightItems, totalItems) {
         let that = this;
         let copyRightItems = 0;
@@ -183,7 +183,7 @@ Page({
             }, 20)
         })
     },
- 
+
   getResultComment(completePercent) {
     let that = this;
     switch (true) {
@@ -205,14 +205,14 @@ Page({
         case completePercent >= 90 && completePercent < 100:
             that.setData({
                 resultComment: "优秀"
-            }) 
+            })
         }
     },
 })
 ```
 :::
 
-##  Bug & Tip 
+##  Bug & Tip
 
 * Tip：canvas 组件不能使用动画进行控制。
 * Tip：组件默认宽度 300px、高度 225px。
